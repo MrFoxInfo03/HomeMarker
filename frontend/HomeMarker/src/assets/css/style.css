@@ -1,0 +1,132 @@
+:root {
+    --primary-color: rgb(255, 181, 22);
+    --secondary-color: rgb(235, 235, 235);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+
+    padding: 10px 20px;
+}
+
+.addit-panel {
+    display: flex;
+    gap: 15px;
+}
+
+.auth-button a,
+.logg-button a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.auth-button a {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.logg-button a {
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+/* Auth.vue page */
+.auth_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth_page h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.auth_page form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.auth_page form > input {
+    margin-bottom: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+}
+
+.auth_page form div {
+    margin-bottom: 50px;
+}
+
+.auth_page form .fullname_fields {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.auth_page form div > input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+}
+
+.auth_page .submit_button {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth_page .submit_button input {
+    background: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth_page .submit_button input:hover {
+    border: 0;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.phone-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.phone-prefix {
+  padding: 10px 12px;
+  font-family: monospace;
+}
+
+.phone-wrapper input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  flex: 1;
+}
+
+/* Login page */
+.loggin_page form > input {
+    width: 20vw;
+}

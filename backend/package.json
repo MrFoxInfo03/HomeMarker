@@ -1,0 +1,25 @@
+{
+  "name": "home_marker",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Oleg Voloshyn",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrFoxInfo03/HomeMarker.git"
+  },
+  "dependencies": {
+    "axios": "^1.17.0",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node-cron": "^4.2.1",
+    "pg": "^8.21.0",
+    "zod": "^4.4.3"
+  }
+}

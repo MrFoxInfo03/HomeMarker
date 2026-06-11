@@ -1,0 +1,81 @@
+import { pool } from '../../units/db.js';
+
+export async function insertListing(listing, dimria_id) {
+    await pool.query(
+        `INSERT INTO dimria_advert (
+            advert_type_name,
+            state_name,
+            city,
+            district_type_name,
+            district_name,
+            street,
+            building_name_str,
+            latitude,
+            longitude,
+            type_object,
+            rooms_count,
+            floor_count,
+            levels,
+            is_commercial,
+            with_panoramas,
+            kitchen_square_meters,
+            total_square_meters,
+            realty_id,
+            is_show_building_no,
+            description,
+            description_uk,
+            beautiful_url,
+            youtube_link,
+            main_photo,
+            photos,
+            currency_type,
+            price_type,
+            price,
+            price_arr,
+            created_at,
+            date_end, 
+            user_advert,
+            dimria_id
+        )
+        VALUES (
+            $1, $2, $3, $4, $5, $6, $7, $8, $9, $10...
+            $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
+            $21, $22, $23, $24, $25, $26, $27, $28, $29, $30
+        );`,
+        [
+            listing.advert_type_name,
+            listing.state_name,
+            listing.city_name,
+            listing.district_type_name,
+            listing.district_name,
+            listing.street_name,
+            listing.building_name_str,
+            listing.latitude,
+            listing.longitude,
+            listing.type,
+            listing.rooms_count,
+            listing.floor_count,
+            listing.levels,
+            listing.is_commercial,
+            listing.with_panoramas,
+            listing.kitchen_square_meters,
+            listing.total_square_meters,
+            listing.realty_id,
+            listing.is_show_building_no,
+            listing.description,
+            listing.description_uk,
+            listing.beautiful_url,
+            listing.youtube_link,
+            listing.main_photo,
+            listing.photos,
+            listing.currency_type,
+            listing.price_type,
+            listing.price,
+            listing.priceArr,
+            listing.created_at,
+            listing.date_end,
+            listing.user_advert,
+            dimria_id
+        ]
+    );
+}
