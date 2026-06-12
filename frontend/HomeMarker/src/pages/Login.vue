@@ -4,9 +4,15 @@
             <h1>Увійти</h1>
             <input type="email" v-model="email" placeholder="Email" maxlength="250" required>
             <input type="password" v-model="password" placeholder="Password" maxlength="150" required>
+            <router-link to="/forgotPassword/forgotPasswordPage">Forgot password</router-link> 
 
             <div class="submit_button">
                 <input type="submit" value="Увійти">
+                <router-link to="/" style="color: black;">Вийти назад</router-link>
+                <router-link to="/auth_page"
+                    style="color: black;">
+                    Ще немаю обліковий запис
+                </router-link>
             </div>
         </form>
     </div>

@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
+const jwt = require('jsonwebtoken');
+const { cookieParser } = require('cookie-parser');
 const pool = require('./units/db');
+import { userRegistrationSchema } from './schemas/user.schema';
 require("dotenv").config();
 
 const bcrypt = require('bcrypt');
@@ -12,23 +15,15 @@ const PORT = process.env.PORT;
 
 app.use('/assets', express.static(path.join(PATH_TO_FRONTEND, 'assets/')));
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({extended: true}));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(PATH_TO_FRONTEND, 'index.html'));
 });
 
-app.post("/auth/add_new_user", (req, res) => {
-    const first_name = req.body.first_name;
-    const last_name = req.body.last_name;
-    const email = req.body.email;
-    const phone_number = req.body.phone_number;
-    const password = req.body.password;
-
-    const password_hash = bcrypt.hash(password, 10);
-
-    return 0;
-});
+const apiRouter = require('./routes/App.route');
+app.use('/', apiRouter);
 
 app.listen(PORT, (err) => {
     if(err) {

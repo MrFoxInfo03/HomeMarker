@@ -1,4 +1,22 @@
-<script setup></script>
+<script setup>
+import { ref, onMounted } from "vue";
+
+const authenticated = ref(false);
+
+onMounted(async() => {
+  try {
+    const response = await fetch("http://localhost:3000/auth/me", 
+      {
+        credentials: "include"
+      }
+    );
+
+    authenticated.value = response.ok;
+  } catch(err) {
+    authenticated.value = false;
+  }
+});
+</script>
 
 <template>
   <div class="nav">
@@ -14,8 +32,10 @@
       </div>
     </div>
   </div>
-  <div class="ProductsList">
+  <div class="welcomeUser">
     
+    
+
   </div>
 
   <router-view />
