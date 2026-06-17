@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.post("/add_new_user", (req, res) => {
+router.post("/add_new_user", async (req, res) => {
     try {
         const checkCorrectData = userRegistrationSchema.safeParse(req.body);
 
@@ -49,7 +49,7 @@ router.post("/add_new_user", (req, res) => {
 
         res.cookie("userToken", token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production",
+            secure: false, //localhost
             sameSite: "lax",
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
